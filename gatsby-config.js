@@ -3,6 +3,7 @@ module.exports = {
     title: 'bitwise.cool',
   },
   plugins: [
+    'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
