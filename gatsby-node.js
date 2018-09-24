@@ -32,6 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               fields {
                 slug
+                collection
               }
             }
           }
@@ -41,7 +42,9 @@ exports.createPages = ({ graphql, actions }) => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
           path: node.fields.slug,
-          component: path.resolve('./src/templates/blog-post.js'),
+          component: path.resolve(
+            `./src/templates/${node.fields.collection}.js`
+          ),
           context: {
             // these are available as GQL variables in page queries
             slug: node.fields.slug,
