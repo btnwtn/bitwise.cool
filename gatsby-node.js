@@ -1,6 +1,34 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+function relativePathToSlug({ path, ext }) {
+  const pathWithoutExtension = path.slice(0, path.length - ext.length)
+  return `/${pathWithoutExtension}/`
+}
+
+function shouldCreatePage({ node, files }) {
+  if (node.fields.collection === 'content') {
+    const potentialMetadata = files.find(
+      ({ node: fileNode }) =>
+        node.fields.slug ===
+        relativePathToSlug({
+          path: fileNode.relativePath,
+          ext: fileNode.ext,
+        })
+    )
+
+    if (potentialMetadata && potentialMetadata.node.name !== 'index') {
+      /**
+       * This isn't an `index.md` file, so it must be metadata.
+       * Don't create the page!
+       */
+      return false
+    }
+  }
+
+  return true
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
@@ -37,9 +65,22 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allFile(filter: { sourceInstanceName: { eq: "content" } }) {
+          edges {
+            node {
+              ext
+              name
+              relativePath
+            }
+          }
+        }
       }
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        if (!shouldCreatePage({ node, files: result.data.allFile.edges })) {
+          return
+        }
+
         createPage({
           path: node.fields.slug,
           component: path.resolve(
