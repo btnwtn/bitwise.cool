@@ -3,12 +3,33 @@ module.exports = {
     title: 'bitwise.cool',
   },
   plugins: [
+    'gatsby-remark-copy-linked-files',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        withWebp: {
+          quality: 80,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-remark-images',
+      options: {},
+    },
     'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'src',
         path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/content/`,
       },
     },
     'gatsby-transformer-remark',
