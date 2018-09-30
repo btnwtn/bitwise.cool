@@ -2,16 +2,27 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
+function filesByNameWithoutImageData(name) {
+  return ({ node }) => node.name === name && node.childImageSharp === null
+}
+
+function getMetadataFiles(files) {
+  const mdFiles = files.filter(
+    ({ node }) =>
+      node.ext === '.md' &&
+      node.name !== 'index' &&
+      files.find(filesByNameWithoutImageData(node.name))
+  )
+
+  return mdFiles
+}
+
 export default ({ data }) => {
   const post = data.markdownRemark
   const files = data.allFile.edges.filter(
     ({ node }) => node.childImageSharp !== null
   )
-  const metadatum = data.allFile.edges.filter(
-    ({ node }) => node.name !== 'index'
-  )
-
-  debugger
+  const metadatum = getMetadataFiles(data.allFile.edges)
 
   return (
     <Layout>
@@ -20,6 +31,7 @@ export default ({ data }) => {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         {files.map(({ node }) => {
           const filename = `${node.name}${node.ext}`
+          const metadata = metadatum.find(edge => edge.node.name === node.name)
 
           return (
             <div key={filename}>
@@ -30,6 +42,11 @@ export default ({ data }) => {
                   srcSet={node.childImageSharp.sizes.srcSet}
                 />
               </a>
+              {Boolean(metadata) && (
+                <p>
+                  {metadata.node.childMarkdownRemark.frontmatter.description}
+                </p>
+              )}
             </div>
           )
         })}
@@ -60,6 +77,14 @@ export const query = graphql`
             }
             sizes(maxWidth: 1240) {
               srcSet
+            }
+          }
+          childMarkdownRemark {
+            frontmatter {
+              title
+              description
+              tags
+              date
             }
           }
         }
