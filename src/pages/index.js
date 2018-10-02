@@ -3,35 +3,65 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import styled from 'react-emotion'
 
-const images = [
-  'https://images.unsplash.com/photo-1537168113816-8fd3aec5fb15?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=622409e4400da813a5ac9a172da47787&auto=format&fit=crop&w=934&q=80',
-
-  'https://images.unsplash.com/photo-1478733672327-ce27bc999503?ixlib=rb-0.3.5&s=df73875c13d5fd8f149016c6bd3bb085&auto=format&fit=crop&w=1533&q=80',
-
-  'https://images.unsplash.com/photo-1476292026003-1df8db2694b8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f517acef521da794eab734cc069e24bf&auto=format&fit=crop&w=1534&q=80',
-
-  'https://images.unsplash.com/photo-1425100599170-85ec4f00a6ee?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=001a54591ed360dd4c27fa9d483212f4&auto=format&fit=crop&w=1350&q=80',
-]
-
-const Grid = styled.div`
-  display: flex;
-  flex-direction: column;
+const GalleryPreview = styled.div`
+  position: relative;
 `
 
 const Image = styled.img`
   display: block;
+  margin: 0;
+`
+
+const TitlePositioner = styled.div`
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+`
+
+const Title = styled.h1`
+  color: white;
+  text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+  margin: 0;
 `
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
+  const galleryIndexFiles = posts.filter(({ node }) => {
+    if (node.fields.collection !== 'content') {
+      return false
+    }
+
+    let paths = node.fileAbsolutePath.split('/')
+    return paths[paths.length - 1] === 'index.md'
+  })
+
   return (
     <Layout>
-      <Grid>
-        {images.map(src => {
-          return <Image key={src} src={src} alt="hi" />
-        })}
-      </Grid>
+      {galleryIndexFiles.map(({ node }) => {
+        const { slug } = node.fields
+        const { title, featuredImage } = node.frontmatter
+        const pictureProps = featuredImage
+          ? featuredImage.childImageSharp.fluid
+          : { src: 'https://i.imgur.com/rbXZcVH.jpg' }
+
+        return (
+          <Link to={slug} key={node.id}>
+            <GalleryPreview>
+              <Image {...pictureProps} alt={title} />
+              <TitlePositioner>
+                <Title>{title}</Title>
+              </TitlePositioner>
+            </GalleryPreview>
+          </Link>
+        )
+      })}
+
+      <br />
+      <br />
+      <br />
+
       {posts.map(({ node: post }) => (
         <Link to={post.fields.slug} key={post.id}>
           {post.frontmatter.title}
@@ -47,11 +77,22 @@ export const query = graphql`
       edges {
         node {
           id
+          fileAbsolutePath
           fields {
             slug
+            collection
           }
           frontmatter {
             title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 420) {
+                  src
+                  srcSet
+                  srcSetWebp
+                }
+              }
+            }
           }
           excerpt(pruneLength: 80)
         }
