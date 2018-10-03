@@ -44,11 +44,17 @@ const getRoutes = routeIds => {
     .then(formatRoutes)
 }
 
+console.log('Fetching tick and route data from mountainproject.com')
 getTicks()
   .then(ticks =>
     Promise.all([ticks, getRoutes(ticks.map(tick => tick.routeId))])
   )
   .then(([ticks, routes]) => {
+    console.log('Writing -> data/ticks.json')
     fs.writeFileSync('./data/ticks.json', JSON.stringify(ticks, null, 2))
+    console.log('Writing -> data/routes.json')
     fs.writeFileSync('./data/routes.json', JSON.stringify(routes, null, 2))
+  })
+  .then(() => {
+    console.log('Successfully fetched data from mountainproject.com!')
   })
