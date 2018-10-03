@@ -3,11 +3,6 @@ const fs = require('fs')
 const fetch = require('node-fetch')
 const env = require('./env.json')
 
-let fetchedRoutes = {}
-try {
-  fetchedRoutes = require('./data/routes.json')
-} catch (e) {}
-
 const getTicks = () =>
   fetch(
     `https://www.mountainproject.com/data/get-ticks?email=${
@@ -22,12 +17,8 @@ const formatRoutes = routes =>
   routes.reduce((acc, route) => ((acc[route.id] = route), acc), {})
 
 const getRoutes = routeIds => {
-  const alreadyFetched = Object.keys(fetchedRoutes)
   // MountainProject getRoutes API limits amount of routesIds to 100 per request
-  const chunks = _.chunk(
-    routeIds.filter(id => alreadyFetched.includes(id)),
-    100
-  )
+  const chunks = _.chunk(routeIds, 100)
   return Promise.all(
     chunks.map(routeIds =>
       fetch(
@@ -51,9 +42,9 @@ getTicks()
   )
   .then(([ticks, routes]) => {
     console.log('Writing -> data/ticks.json')
-    fs.writeFileSync('./data/ticks.json', JSON.stringify(ticks, null, 2))
+    fs.writeFileSync('./src/data/ticks.json', JSON.stringify(ticks, null, 2))
     console.log('Writing -> data/routes.json')
-    fs.writeFileSync('./data/routes.json', JSON.stringify(routes, null, 2))
+    fs.writeFileSync('./src/data/routes.json', JSON.stringify(routes, null, 2))
   })
   .then(() => {
     console.log('Successfully fetched data from mountainproject.com!')

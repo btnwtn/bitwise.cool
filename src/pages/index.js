@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import styled from 'react-emotion'
+import TickMap from '../components/TickMap'
 
 function oleFishyYates(array) {
   let a = array.slice()
@@ -55,39 +56,44 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <h1>Random Galleries</h1>
-      <Grid>
-        {galleryIndexFiles.slice(0, 5).map(({ node }) => {
-          const { slug } = node.fields
-          const { title, featuredImage } = node.frontmatter
-          const pictureProps = featuredImage
-            ? featuredImage.childImageSharp.fluid
-            : { src: 'https://i.imgur.com/rbXZcVH.jpg' }
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr repeat(auto-size, minmax(600px, 1fr))',
+          gridGap: '20px',
+        }}
+      >
+        <div>
+          <h1>Random Galleries</h1>
+          <Grid>
+            {galleryIndexFiles.slice(0, 5).map(({ node }) => {
+              const { slug } = node.fields
+              const { title, featuredImage } = node.frontmatter
+              const pictureProps = featuredImage
+                ? featuredImage.childImageSharp.fluid
+                : { src: 'https://i.imgur.com/rbXZcVH.jpg' }
 
-          return (
-            <GalleryPreview>
-              <Link
-                to={slug}
-                key={node.id}
-                style={{ display: 'block', position: 'relative' }}
-              >
-                <Image {...pictureProps} alt={title} />
-                <Title>{title}</Title>
-              </Link>
-            </GalleryPreview>
-          )
-        })}
-      </Grid>
+              return (
+                <GalleryPreview>
+                  <Link
+                    to={slug}
+                    key={node.id}
+                    style={{ display: 'block', position: 'relative' }}
+                  >
+                    <Image {...pictureProps} alt={title} />
+                    <Title>{title}</Title>
+                  </Link>
+                </GalleryPreview>
+              )
+            })}
+          </Grid>
+        </div>
 
-      <br />
-      <br />
-      <br />
-
-      {posts.map(({ node: post }) => (
-        <Link to={post.fields.slug} key={post.id}>
-          {post.frontmatter.title}
-        </Link>
-      ))}
+        <div>
+          <h1>Latest Ticks</h1>
+          <TickMap />
+        </div>
+      </div>
     </Layout>
   )
 }
