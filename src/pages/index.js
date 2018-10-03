@@ -3,35 +3,86 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import styled from 'react-emotion'
 
-const images = [
-  'https://images.unsplash.com/photo-1537168113816-8fd3aec5fb15?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=622409e4400da813a5ac9a172da47787&auto=format&fit=crop&w=934&q=80',
+function oleFishyYates(array) {
+  let a = array.slice()
+  for (let i = a.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1))
+    let x = a[i]
+    a[i] = a[j]
+    a[j] = x
+  }
 
-  'https://images.unsplash.com/photo-1478733672327-ce27bc999503?ixlib=rb-0.3.5&s=df73875c13d5fd8f149016c6bd3bb085&auto=format&fit=crop&w=1533&q=80',
-
-  'https://images.unsplash.com/photo-1476292026003-1df8db2694b8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f517acef521da794eab734cc069e24bf&auto=format&fit=crop&w=1534&q=80',
-
-  'https://images.unsplash.com/photo-1425100599170-85ec4f00a6ee?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=001a54591ed360dd4c27fa9d483212f4&auto=format&fit=crop&w=1350&q=80',
-]
+  return a
+}
 
 const Grid = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+`
+
+const GalleryPreview = styled.div`
+  position: relative;
 `
 
 const Image = styled.img`
   display: block;
+  margin: 0;
+  width: 100%;
+`
+
+const Title = styled.h1`
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+  text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+  margin: 0;
+  max-width: 80%;
 `
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
+  const galleryIndexFiles = posts.filter(({ node }) => {
+    if (node.fields.collection !== 'content') {
+      return false
+    }
+
+    let paths = node.fileAbsolutePath.split('/')
+    return paths[paths.length - 1] === 'index.md'
+  })
+
   return (
     <Layout>
+      <h1>Random Galleries</h1>
       <Grid>
-        {images.map(src => {
-          return <Image key={src} src={src} alt="hi" />
+        {galleryIndexFiles.slice(0, 5).map(({ node }) => {
+          const { slug } = node.fields
+          const { title, featuredImage } = node.frontmatter
+          const pictureProps = featuredImage
+            ? featuredImage.childImageSharp.fluid
+            : { src: 'https://i.imgur.com/rbXZcVH.jpg' }
+
+          return (
+            <GalleryPreview>
+              <Link
+                to={slug}
+                key={node.id}
+                style={{ display: 'block', position: 'relative' }}
+              >
+                <Image {...pictureProps} alt={title} />
+                <Title>{title}</Title>
+              </Link>
+            </GalleryPreview>
+          )
         })}
       </Grid>
+
+      <br />
+      <br />
+      <br />
+
       {posts.map(({ node: post }) => (
         <Link to={post.fields.slug} key={post.id}>
           {post.frontmatter.title}
@@ -47,11 +98,22 @@ export const query = graphql`
       edges {
         node {
           id
+          fileAbsolutePath
           fields {
             slug
+            collection
           }
           frontmatter {
             title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 420) {
+                  src
+                  srcSet
+                  srcSetWebp
+                }
+              }
+            }
           }
           excerpt(pruneLength: 80)
         }
