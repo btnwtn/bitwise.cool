@@ -6,3 +6,9 @@ yarn-error.log
 # Build directory
 /public
 .DS_Store
+
+# Environment Variables
+env.json
+
+# Data directory
+src/data/
