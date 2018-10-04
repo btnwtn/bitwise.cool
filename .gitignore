@@ -9,6 +9,3 @@ yarn-error.log
 
 # Environment Variables
 env.json
-
-# Data directory
-src/data/

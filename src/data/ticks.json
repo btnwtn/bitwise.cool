@@ -1,0 +1,123 @@
+[
+  {
+    "routeId": 108962874,
+    "date": "2018-09-29",
+    "pitches": 1,
+    "notes": "",
+    "style": "",
+    "leadStyle": "",
+    "tickId": 115367301,
+    "userStars": 3,
+    "userRating": ""
+  },
+  {
+    "routeId": 109601812,
+    "date": "2018-09-29",
+    "pitches": 1,
+    "notes": "",
+    "style": "",
+    "leadStyle": "",
+    "tickId": 115367294,
+    "userStars": 2,
+    "userRating": "V0"
+  },
+  {
+    "routeId": 106134457,
+    "date": "2018-09-23",
+    "pitches": 1,
+    "notes": "Last pitch, Ribs -> Scramble -> Calisthenics Roof.",
+    "style": "Lead",
+    "leadStyle": "Fell/Hung",
+    "tickId": 115350564,
+    "userStars": 2,
+    "userRating": ""
+  },
+  {
+    "routeId": 105920873,
+    "date": "2018-09-23",
+    "pitches": 2,
+    "notes": "don&#39;t climb on busy days.",
+    "style": "Lead",
+    "leadStyle": "Onsight",
+    "tickId": 115350501,
+    "userStars": 2,
+    "userRating": "5.3"
+  },
+  {
+    "routeId": 105799697,
+    "date": "2018-09-23",
+    "pitches": 3,
+    "notes": "Fourth trad lead lol",
+    "style": "Lead",
+    "leadStyle": "Onsight",
+    "tickId": 115350412,
+    "userStars": 4,
+    "userRating": "5.6"
+  },
+  {
+    "routeId": 105902104,
+    "date": "2018-09-22",
+    "pitches": 1,
+    "notes": "",
+    "style": "Lead",
+    "leadStyle": "Onsight",
+    "tickId": 115350550,
+    "userStars": 1,
+    "userRating": "5.5"
+  },
+  {
+    "routeId": 105799721,
+    "date": "2018-09-22",
+    "pitches": 1,
+    "notes": "First ever lead on gear.",
+    "style": "Lead",
+    "leadStyle": "Onsight",
+    "tickId": 115350522,
+    "userStars": 4,
+    "userRating": "5.5"
+  },
+  {
+    "routeId": 106039418,
+    "date": "2018-09-15",
+    "pitches": 1,
+    "notes": "",
+    "style": "",
+    "leadStyle": "",
+    "tickId": 115322371,
+    "userStars": 2,
+    "userRating": "V0"
+  },
+  {
+    "routeId": 106250047,
+    "date": "2018-09-15",
+    "pitches": 1,
+    "notes": "",
+    "style": "",
+    "leadStyle": "",
+    "tickId": 115320011,
+    "userStars": 3,
+    "userRating": "V0"
+  },
+  {
+    "routeId": 105904755,
+    "date": "2018-06-03",
+    "pitches": 1,
+    "notes": "Soaking wet. Slugs on holds.",
+    "style": "TR",
+    "leadStyle": "",
+    "tickId": 114440038,
+    "userStars": 2,
+    "userRating": ""
+  },
+  {
+    "routeId": 105958360,
+    "date": "2018-06-02",
+    "pitches": 1,
+    "notes": "Freed this bad boy on TR, fun crux move on a good hand jam.",
+    "style": "TR",
+    "leadStyle": "",
+    "tickId": 114439993,
+    "userStars": 2,
+    "userRating": "5.8-"
+  }
+]
