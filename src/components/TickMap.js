@@ -1,64 +1,64 @@
-import React, { Component } from 'react'
 import _ from 'lodash'
+import React from 'react'
+import styled, { css } from 'react-emotion'
 
 import ticks from '../data/ticks.json'
 import routes from '../data/routes.json'
 
-export default class TickMap extends Component {
-  render() {
-    return (
-      <div>
-        {Object.entries(_.groupBy(ticks, 'date'))
-          .slice(0, 5)
-          .map(([date, ticks]) => {
-            return (
-              <div key={date}>
-                <p style={{ fontSize: '.8rem', marginBottom: '1em' }}>{date}</p>
-                <ul>
-                  {ticks.map(tick => {
-                    const route = routes[tick.routeId]
-                    return (
-                      <div key={tick.id} style={{ marginBottom: '1rem' }}>
-                        <div style={{ display: 'flex' }}>
-                          <h1
-                            style={{
-                              fontSize: '1rem',
-                              margin: 0,
-                            }}
-                          >
-                            <a href={route.url}>{route.name} </a>
-                            <small
-                              style={{
-                                marginLeft: '.1777rem',
-                                textDecoration: 'none',
-                              }}
-                            >
-                              {route.rating}
-                            </small>
-                            {tick.leadStyle.toUpperCase() === 'ONSIGHT' && (
-                              <span
-                                style={{
-                                  marginLeft: '.5em',
-                                  textTransform: 'uppercase',
-                                  fontWeight: 'bold',
-                                  fontSize: '.65rem',
-                                  color: '#787d7a',
-                                }}
-                              >
-                                {tick.leadStyle}
-                              </span>
-                            )}
-                          </h1>
-                        </div>
-                        <small>{route.location.slice(0, 2).join(', ')}</small>
-                      </div>
-                    )
-                  })}
-                </ul>
-              </div>
-            )
-          })}
-      </div>
-    )
+import RouteInfo from './TickMap/RouteInfo'
+
+const Date = styled.span`
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-bottom: 1em;
+  position: relative;
+  text-shadow: 0 1px 0 #fff;
+
+  &:after {
+    position: absolute;
+    bottom: 0.3em;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 0.4em;
+    background-color: #e1eeff;
+    z-index: -1;
   }
-}
+`
+
+const TickMap = () => (
+  <div
+    className={css`
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+      grid-row-gap: 1rem;
+    `}
+  >
+    {Object.entries(_.groupBy(ticks, 'date'))
+      .slice(0, 5)
+      .map(([date, ticks]) => {
+        return (
+          <div key={date}>
+            <Date>{date}</Date>
+            <ul>
+              {ticks.map(tick => {
+                const route = routes[tick.routeId]
+                return (
+                  <RouteInfo
+                    key={tick.id}
+                    url={route.url}
+                    name={route.name}
+                    rating={route.rating}
+                    location={route.location.slice(0, 2).join(', ')}
+                    onsight={tick.leadStyle.toLowerCase() === 'onsight'}
+                  />
+                )
+              })}
+            </ul>
+          </div>
+        )
+      })}
+  </div>
+)
+
+export default TickMap
