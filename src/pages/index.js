@@ -4,18 +4,6 @@ import Layout from '../components/layout'
 import styled from 'react-emotion'
 import TickMap from '../components/TickMap'
 
-function oleFishyYates(array) {
-  let a = array.slice()
-  for (let i = a.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1))
-    let x = a[i]
-    a[i] = a[j]
-    a[j] = x
-  }
-
-  return a
-}
-
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -56,44 +44,34 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr repeat(auto-size, minmax(600px, 1fr))',
-          gridGap: '20px',
-        }}
-      >
-        <div>
-          <h1>Random Galleries</h1>
-          <Grid>
-            {galleryIndexFiles.slice(0, 5).map(({ node }) => {
-              const { slug } = node.fields
-              const { title, featuredImage } = node.frontmatter
-              const pictureProps = featuredImage
-                ? featuredImage.childImageSharp.fluid
-                : { src: 'https://i.imgur.com/rbXZcVH.jpg' }
+      <h2>Latest Galleries</h2>
+      <Grid>
+        {galleryIndexFiles.slice(0, 5).map(({ node }) => {
+          const { slug } = node.fields
+          const { title, featuredImage } = node.frontmatter
+          const pictureProps = featuredImage
+            ? featuredImage.childImageSharp.fluid
+            : { src: 'https://i.imgur.com/rbXZcVH.jpg' }
 
-              return (
-                <GalleryPreview>
-                  <Link
-                    to={slug}
-                    key={node.id}
-                    style={{ display: 'block', position: 'relative' }}
-                  >
-                    <Image {...pictureProps} alt={title} />
-                    <Title>{title}</Title>
-                  </Link>
-                </GalleryPreview>
-              )
-            })}
-          </Grid>
-        </div>
+          return (
+            <GalleryPreview>
+              <Link
+                to={slug}
+                key={node.id}
+                style={{ display: 'block', position: 'relative' }}
+              >
+                <Image {...pictureProps} alt={title} />
+                <Title>{title}</Title>
+              </Link>
+            </GalleryPreview>
+          )
+        })}
+      </Grid>
 
-        <div>
-          <h1>Latest Ticks</h1>
-          <TickMap />
-        </div>
-      </div>
+      <h2>
+        Recent <abbr title="rock climbing boulder/route">Ticks</abbr>
+      </h2>
+      <TickMap />
     </Layout>
   )
 }
