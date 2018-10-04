@@ -30,7 +30,7 @@ const TickMap = () => (
   <div
     className={css`
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       grid-row-gap: 1rem;
     `}
   >
