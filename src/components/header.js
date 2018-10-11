@@ -21,12 +21,21 @@ const Header = ({ siteTitle }) => (
           to="/"
           style={{
             textDecoration: 'none',
+            fontFamily: 'input mono condensed, hack, mono',
+            fontSize: '1rem',
+            lineHeight: 1,
           }}
         >
           {siteTitle}
         </Link>
       </h1>
-      <nav style={{ marginLeft: 'auto' }}>
+      <nav
+        style={{
+          marginLeft: 'auto',
+          fontFamily: 'input mono condensed, hack, mono',
+          fontSize: '.75rem',
+        }}
+      >
         <Link to="/about" style={{ marginRight: '1em' }}>
           About
         </Link>
