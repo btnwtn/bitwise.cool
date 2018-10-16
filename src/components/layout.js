@@ -6,7 +6,7 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import 'normalize.css'
 import './layout.css'
 
-const Layout = ({ children }) => (
+const Layout = ({ description, keywords, children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -22,25 +22,12 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
+            description && { name: 'description', content: description },
+            keywords && { name: 'keywords', content: keywords.join(', ') },
+          ].filter(Boolean)}
         >
           <html lang="en" />
         </Helmet>
-        <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              textDecoration: 'none',
-              fontFamily: 'input mono condensed, hack, mono',
-              fontSize: '1rem',
-              lineHeight: 1,
-            }}
-          >
-            {data.site.siteMetadata.title}
-          </Link>
-        </h1>
         {children}
       </>
     )}
@@ -48,6 +35,8 @@ const Layout = ({ children }) => (
 )
 
 Layout.propTypes = {
+  description: PropTypes.string,
+  keywords: PropTypes.array,
   children: PropTypes.node.isRequired,
 }
 

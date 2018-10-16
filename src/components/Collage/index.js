@@ -5,8 +5,6 @@ import mq from '../mq'
 
 const Container = styled.div`
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
 `
 
 const Images = styled.div`
