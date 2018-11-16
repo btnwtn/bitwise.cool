@@ -15,7 +15,6 @@ export default ({ data }) => {
   return (
     <Layout title={post.frontmatter.title}>
       <Container>
-        adsdsasadsda
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </Container>

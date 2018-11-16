@@ -1,5 +1,4 @@
 import React from 'react'
-import { css } from 'emotion'
 import styled from 'react-emotion'
 import mq from '../mq'
 

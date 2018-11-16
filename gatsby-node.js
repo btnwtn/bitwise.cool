@@ -45,7 +45,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: 'collection',
-      value: parent.sourceInstanceName,
+      value: parent.relativeDirectory.split('/')[0],
     })
   }
 }
