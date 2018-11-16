@@ -4,7 +4,6 @@ import Layout from '../components/layout'
 import styled from 'react-emotion'
 
 let Container = styled.div`
-  background: red;
   max-width: 45em;
   margin-left: auto;
   margin-right: auto;

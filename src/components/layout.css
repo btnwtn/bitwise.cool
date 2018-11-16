@@ -60,13 +60,28 @@ body {
   color: #22181c;
 }
 
+p {
+    line-height: 1.45;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+code {
   font-family: 'IBM Plex Mono', monospace;
+}
+
+pre[class*="language-"] {
+    border-radius: 0;
+}
+
+p code {
+    background-color: #ffe7ce;
+    font-size: .9em;
+    padding: .2em;
 }
 
 abbr {
