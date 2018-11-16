@@ -77,10 +77,6 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        if (!shouldCreatePage({ node, files: result.data.allFile.edges })) {
-          return
-        }
-
         createPage({
           path: node.fields.slug,
           component: path.resolve(

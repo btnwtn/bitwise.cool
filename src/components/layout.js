@@ -6,7 +6,7 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import 'normalize.css'
 import './layout.css'
 
-const Layout = ({ description, keywords, children }) => (
+const Layout = ({ title, description, keywords, children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -20,7 +20,9 @@ const Layout = ({ description, keywords, children }) => (
     render={data => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={
+            title ? `${title} 🦆 bitwise.cool ` : data.site.siteMetadata.title
+          }
           meta={[
             description && { name: 'description', content: description },
             keywords && { name: 'keywords', content: keywords.join(', ') },
