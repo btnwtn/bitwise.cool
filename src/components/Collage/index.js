@@ -36,6 +36,7 @@ const Bubble = styled.div`
 const Text = styled.p`
   font-size: 1.25em;
   font-family: 'IBM Plex Mono', monospace;
+  line-height: 1;
   margin: 0;
 
   ${mq.small} {
