@@ -12,6 +12,10 @@ let Container = styled.div`
   padding-right: 1em;
 `
 
+let Content = styled.div`
+  margin-bottom: 4em;
+`
+
 let Logo = styled.img`
   display: block;
   max-width: 200px;
@@ -30,7 +34,7 @@ export default ({ data }) => {
           <Logo src={logo} alt="bitwise" />
         </a>
         <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <Content dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
     </Layout>
   )
