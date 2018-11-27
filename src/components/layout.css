@@ -60,6 +60,17 @@ body {
   color: #22181c;
 }
 
+a {
+    color: hsl(1, 87%, 49%);
+}
+a:hover,
+a:focus {
+    color: hsl(-6, 75%, 69%);
+}
+a:visited {
+    color: hsl(-24, 87%, 39%);
+}
+
 p {
     line-height: 1.45;
 }
