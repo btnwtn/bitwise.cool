@@ -28,7 +28,10 @@ export default ({ data }) => {
     return '<li><span>'.concat(matches[0]).concat('</span></li>')
   })
   return (
-    <Layout title={post.frontmatter.title}>
+    <Layout
+      title={post.frontmatter.title}
+      description={post.frontmatter.description}
+    >
       <Container>
         <a href="/">
           <Logo src={logo} alt="bitwise" />

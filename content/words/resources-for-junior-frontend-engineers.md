@@ -1,6 +1,7 @@
 ---
 title: Fundamental Resources for Junior Frontend Engineers
-date: "11-16-2018"
+date: "11-27-2018"
+description: "A list of fundamental web development resources that will increase your understanding of the Web, and progress your career."
 ---
 
 ## Preface
