@@ -86,7 +86,7 @@ code {
 }
 
 pre[class*='language-'] {
-  border-radius: 0;
+  border-radius: 8px;
   border: 6px solid hsl(233, 100%, 85%);
   border-bottom-color: #ffa4b5;
   border-left-color: hsla(349, 46%, 50%, 1);
