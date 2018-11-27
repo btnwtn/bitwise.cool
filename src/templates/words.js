@@ -16,6 +16,13 @@ let Content = styled.div`
   margin-bottom: 4em;
 `
 
+let Date = styled.p`
+  color: #483e3e;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9em;
+  margin-bottom: 2rem;
+`
+
 let Logo = styled.img`
   display: block;
   max-width: 200px;
@@ -27,6 +34,7 @@ export default ({ data }) => {
   let html = post.html.replace(/<li>(.*)<\/li>/g, (_, ...matches) => {
     return '<li><span>'.concat(matches[0]).concat('</span></li>')
   })
+  console.log(post.frontmatter)
   return (
     <Layout
       title={post.frontmatter.title}
@@ -37,6 +45,7 @@ export default ({ data }) => {
           <Logo src={logo} alt="bitwise" />
         </a>
         <h1>{post.frontmatter.title}</h1>
+        <Date>Published: {post.frontmatter.date}</Date>
         <Content dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
     </Layout>
@@ -49,6 +58,8 @@ export const query = graphql`
       html
       frontmatter {
         title
+        description
+        date
       }
     }
   }
