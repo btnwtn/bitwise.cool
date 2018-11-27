@@ -98,3 +98,7 @@ p code {
 abbr {
   cursor: help;
 }
+
+ul {
+    list-style-type: cjk-heavenly-stem;
+}
