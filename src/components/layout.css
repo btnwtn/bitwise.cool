@@ -87,6 +87,10 @@ code {
 
 pre[class*='language-'] {
   border-radius: 0;
+  border: 6px solid hsl(233, 100%, 85%);
+  border-bottom-color: #ffa4b5;
+  border-left-color: hsla(349, 46%, 50%, 1);
+  border-right-color: #e7b3f3;
 }
 
 p code {
@@ -104,7 +108,7 @@ ul {
   color: #ce9d9d;
 }
 ul li {
-    margin-bottom: .4em;
+  margin-bottom: 0.4em;
 }
 ul li span {
   color: #22181c;
