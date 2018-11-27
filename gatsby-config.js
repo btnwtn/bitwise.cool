@@ -6,6 +6,15 @@ module.exports = {
     'gatsby-remark-copy-linked-files',
     'gatsby-transformer-sharp',
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-83933558-2',
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sharp',
       options: {
         withWebp: {
