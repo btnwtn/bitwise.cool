@@ -8,6 +8,8 @@ let Container = styled.div`
   max-width: 45em;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
 `
 
 let Logo = styled.img`
