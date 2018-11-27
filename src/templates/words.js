@@ -11,11 +11,14 @@ let Container = styled.div`
 
 export default ({ data }) => {
   const post = data.markdownRemark
+  let html = post.html.replace(/<li>(.*)<\/li>/g, (_, ...matches) => {
+    return '<li><span>'.concat(matches[0]).concat('</span></li>')
+  })
   return (
     <Layout title={post.frontmatter.title}>
       <Container>
         <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
     </Layout>
   )

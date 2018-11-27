@@ -61,18 +61,18 @@ body {
 }
 
 a {
-    color: hsl(1, 87%, 49%);
+  color: hsl(1, 87%, 49%);
 }
 a:hover,
 a:focus {
-    color: hsl(-6, 75%, 69%);
+  color: hsl(-6, 75%, 69%);
 }
 a:visited {
-    color: hsl(-24, 87%, 39%);
+  color: hsl(-24, 87%, 39%);
 }
 
 p {
-    line-height: 1.45;
+  line-height: 1.45;
 }
 
 h1,
@@ -85,14 +85,14 @@ code {
   font-family: 'IBM Plex Mono', monospace;
 }
 
-pre[class*="language-"] {
-    border-radius: 0;
+pre[class*='language-'] {
+  border-radius: 0;
 }
 
 p code {
-    background-color: #ffe7ce;
-    font-size: .9em;
-    padding: .2em;
+  background-color: #ffe7ce;
+  font-size: 0.9em;
+  padding: 0.2em;
 }
 
 abbr {
@@ -100,5 +100,12 @@ abbr {
 }
 
 ul {
-    list-style-type: cjk-heavenly-stem;
+  list-style-type: cjk-heavenly-stem;
+  color: #ce9d9d;
+}
+ul li {
+    margin-bottom: .4em;
+}
+ul li span {
+  color: #22181c;
 }
