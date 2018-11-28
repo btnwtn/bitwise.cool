@@ -42,7 +42,7 @@ Additional resources:
 
 ### [Testing Javascript](https://testingjavascript.com/)
 
-This is _the_ resource for learning to test javascript applications. Kent explains how to avoid testing implementation details, and advocates for testing best practices. This is the only paid resource in this list and I wouldn’t advocate for it unless I truly believed that it’s worth every penny.
+This is _the_ resource for learning to test Javascript applications. Kent explains how to avoid testing implementation details, and advocates for testing best practices. This is the only paid resource in this list and I wouldn’t advocate for it unless I truly believed that it’s worth every penny.
 
 ### [Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 
@@ -96,7 +96,7 @@ This is more of a bonus than anything. Reginald Braithwaite’s articles have in
 
 ### [Pony Foo Weekly](https://ponyfoo.com/weekly)
 
-And finally, this is one of the best weekly newsletters on javascript/the Web in general. Packed with tons of great articles on a wide range of topics.
+And finally, this is one of the best weekly newsletters on Javascript/the Web in general. Packed with tons of great articles on a wide range of topics.
 
 ## Keep Learning!
 Lists like these are a bit overwhelming. I don’t suggestion tackling everything at once. But, I do want to encourage you to contribute to the culture of sharing knowledge that is so prevalent in the Web world. Share whatever you find interesting with your peers. Don’t be afraid to ask for help when you don’t understand something. And most importantly, keep learning! 
