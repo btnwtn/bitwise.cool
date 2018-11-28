@@ -1,6 +1,6 @@
 ---
 title: Fundamental Resources for Junior Frontend Engineers
-date: "11-27-2018"
+date: "11.27.2018"
 description: "A list of fundamental web development resources that will increase your understanding of the Web, and progress your career."
 ---
 
@@ -103,7 +103,6 @@ $ grep -r userIsAdmin ~/my-project/src
 We now know that `userIsAdmin` is being called from `src/index.js`, and `src/admin/index.js`. From here I can easily debug if the issue exists in those files or the function `userIsAdmin` itself.
 
 Additional resources:
-- [Introducing the React Profiler](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html)
 - [jlevy/the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
 
 ### [Testing Javascript](https://testingjavascript.com/)
