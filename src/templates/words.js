@@ -34,7 +34,6 @@ export default ({ data }) => {
   let html = post.html.replace(/<li>(.*)<\/li>/g, (_, ...matches) => {
     return '<li><span>'.concat(matches[0]).concat('</span></li>')
   })
-  console.log(post.frontmatter)
   return (
     <Layout
       title={post.frontmatter.title}

@@ -34,7 +34,74 @@ console.log(a())
 
 ### [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
 
-Debugging is honestly the most useful skill you can have as a developer. Being proficient at debugging will save you hours of frustrating work, and also make you more productive building things. Besides the Chrome DevTools, it’s also worthwhile knowing some command line basics.
+Debugging is honestly the most useful skill you can have as a developer. Being proficient at debugging will save you hours of frustrating work, and also make you more productive building things.
+
+Most people are familiar with "console debugging", that is logging out values at certain points during a process. E.g.
+
+```js
+function filterUsersByPermission(permission, users) {
+  let filteredUsers = users.filter(user => {
+    // ok, which user am I dealing with?
+    console.log(user)
+
+    // does this user have a matching permission?
+    let temp = user.permissions.includes(permission)
+    console.log(temp)
+
+    return user.permissions.includes(permission)
+  })
+
+  return filteredUsers
+}
+
+// why isn't this returning user "420memelord69"?
+filterUsersByPermission('1337_as_heck', [
+  {
+    username: '420memelord69',
+    permissions: ['definitely_not_1337_as_heck'],
+  }
+])
+```
+
+Using DevTools I can drop a `debugger` in the places I want to inspect values:
+
+```js
+function filterUsersByPermission(permission, users) {
+  let filteredUsers = users.filter(user => {
+    debugger
+    return user.permissions.includes(permission)
+  })
+
+  return filteredUsers
+}
+```
+
+If I run the code above while the DevTools are open I can manually iterate over the filter predicate (the "callback" being supplied to `users.filter`). This is a lot more flexible than just printing out values. Imagine if you passed in an array of thousands of users.
+
+
+<video class="pseudo-gif" autoplay loop muted playsinline poster="/words/static/debugger_poster.jpg">
+  <source src="/words/static/debugger.mp4" type="video/mp4">
+</video>
+
+Besides the Chrome DevTools, it’s also worthwhile knowing some command line basics. For example, say you're debugging a problem where some users are being marked as admins, and that logic exists in a function deep in your codebase. You can make use of `grep` or `ag` to find every occurence of that function. Given:
+
+```js
+// src/utils/user.js
+export function userIsAdmin(user) {
+  return !!Math.floor(Math.random() * 2)) && user.isAdmin
+}
+```
+
+We can run `grep`:
+
+```sh
+$ grep -r userIsAdmin ~/my-project/src
+~/my-project/src/utils/user.js:export function userIsAdmin(user) {
+~/my-project/src/admin/index.js:    userIsAdmin({})
+~/my-project/src/index.js:  if (userIsAdmin({ isAdmin: false })) {
+```
+
+We now know that `userIsAdmin` is being called from `src/index.js`, and `src/admin/index.js`. From here I can easily debug if the issue exists in those files or the function `userIsAdmin` itself.
 
 Additional resources:
 - [Introducing the React Profiler](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html)
