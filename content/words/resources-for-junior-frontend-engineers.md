@@ -76,10 +76,9 @@ function filterUsersByPermission(permission, users) {
 }
 ```
 
-If I run the code above while the DevTools are open I can manually iterate over the filter predicate (the "callback" being supplied to `users.filter`). This is a lot more flexible than just printing out values. Imagine if you passed in an array of thousands of users.
+If I run the code above with DevTools open, I can manually iterate over the filter predicate (the "callback" being supplied to `users.filter`). This is a lot more flexible than just printing out values. Imagine if you passed in an array of thousands of users.
 
-
-<video class="pseudo-gif" autoplay loop muted playsinline poster="/words/static/debugger_poster.jpg">
+<video style="max-width:100%;border-radius:3px;" autoplay loop muted playsinline poster="/words/static/debugger_poster.jpg">
   <source src="/words/static/debugger.mp4" type="video/mp4">
 </video>
 
@@ -168,4 +167,16 @@ And finally, this is one of the best weekly newsletters on Javascript/the Web in
 ## Keep Learning!
 Lists like these are a bit overwhelming. I don’t suggestion tackling everything at once. But, I do want to encourage you to contribute to the culture of sharing knowledge that is so prevalent in the Web world. Share whatever you find interesting with your peers. Don’t be afraid to ask for help when you don’t understand something. And most importantly, keep learning! 
 
-\#junior-dev-for-life
+<span style="
+/* lol this is so extra */
+padding: .5em;
+background-color: #ffffff;
+border-radius: 12px;
+color: #2f47e8;
+margin-top: 1rem;
+display: inline-block;
+box-shadow: 5px 5px 10px #ffa0a0;
+border: 1px solid #ffbaba94;
+font-size: .9em;
+font-family: 'IBM Plex Mono', monospace;
+">\#junior-dev-for-life</span>
