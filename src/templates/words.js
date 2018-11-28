@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import styled from 'react-emotion'
 import logo from '../images/logo.svg'
@@ -29,7 +30,7 @@ let Logo = styled.img`
   margin: 5rem auto;
 `
 
-export default ({ data }) => {
+export default ({ data, location }) => {
   const post = data.markdownRemark
   let html = post.html.replace(/<li>(.*)<\/li>/g, (_, ...matches) => {
     return '<li><span>'.concat(matches[0]).concat('</span></li>')
@@ -39,6 +40,7 @@ export default ({ data }) => {
       title={post.frontmatter.title}
       description={post.frontmatter.description}
     >
+      <Helmet meta={[{ name: 'og:location', content: location.href }]} />
       <Container>
         <a href="/">
           <Logo src={logo} alt="bitwise" />
