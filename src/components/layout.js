@@ -37,6 +37,11 @@ let SEOBullshit = ({ title, description }) => {
     { name: 'twitter:card', content: 'summary' },
     { name: 'twitter:site', content: '@bitwiselover' },
     { name: 'twitter:creator', content: '@bitwiselover' },
+    {
+      name: 'twitter:image:alt',
+      content:
+        'a hand-drawn logo containing the text "bitwise" in a rounded fun bubbly style that is accented with stars.',
+    },
     ...social,
   ]
 }
