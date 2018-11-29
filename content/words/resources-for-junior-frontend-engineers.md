@@ -5,7 +5,7 @@ description: "A list of fundamental web development resources that will increase
 ---
 
 ## Preface
-As an experienced Web/Frontend Engineer I’ve had the pleasure of mentoring a few of my colleagues, both junior and not so-junior. During that time I’ve accumulated a few bookmarks that are always worth sharing with my peers.
+As an experienced Web/Frontend Engineer I’ve had the pleasure of mentoring a few of my colleagues, both junior and not-so-junior. During that time I’ve accumulated a few bookmarks that are always worth sharing with my peers.
 
 This list is for those who want a deeper understanding of the fundamentals behind the tools and frameworks we all use. Whether you’re a seasoned Web/Frontend Engineer, or just getting your feet wet with the latest JS framework; there’s something here for you.
 
@@ -82,7 +82,7 @@ If I run the code above with DevTools open, I can manually iterate over the filt
   <source src="/words/static/debugger.mp4" type="video/mp4">
 </video>
 
-Besides the Chrome DevTools, it’s also worthwhile knowing some command line basics. For example, say you're debugging a problem where some users are being marked as admins, and that logic exists in a function deep in your codebase. You can make use of `grep` or `ag` to find every occurence of that function. Given:
+Besides the Chrome DevTools, it’s also worthwhile to know some command line basics. For example, say you're debugging a problem where some users are being marked as admins, and that logic exists in a function deep in your codebase. You can make use of `grep` or `ag` to find every occurence of that function. Given:
 
 ```js
 // src/utils/user.js
@@ -111,7 +111,7 @@ This is _the_ resource for learning to test Javascript applications. Kent explai
 
 ### [Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 
-A lot of DOM interactions are abstracted away from us by frameworks and libraries. It’s still really important to know what’s going on under the hood. The best way to really encapsulate this knowledge is to write your own versions of the methods that exist on DOM nodes. For example, our own version of `Node.nextElementSibling` would look something like this:
+A lot of DOM interactions are abstracted by frameworks and libraries. It’s still really important to know what’s going on under the hood. The best way to really encapsulate this knowledge is to write your own versions of the methods that exist on DOM nodes. For example, our own version of `Node.nextElementSibling` would look something like this:
 
 ```js
 let nextElementSibling = node => {
