@@ -12,7 +12,7 @@ This list is for those who want a deeper understanding of the fundamentals behin
 ## Resources
 ### [Philip Roberts: What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
-This is honestly one of the best technical talks I’ve seen. It’s an overview of Javascript's Event Loop and Message Queue. Learning these concepts will give you a detailed understanding of how asynchronous code works in Javascript. Knowing these concepts also help in diagnosing issues like a page becoming unresponsive while processing data (ever had a page just freeze on you?). I’ve watched this talk multiple times and I recommend doing so until the concepts really click. When you understand the Event Loop you can easily reason about the below code logging out `a, c, b` rather than `b, c, a`.
+This is honestly one of the best technical talks I’ve seen. It’s an overview of JavaScript's Event Loop and Message Queue. Learning these concepts will give you a detailed understanding of how asynchronous code works in JavaScript. Knowing these concepts also help in diagnosing issues like a page becoming unresponsive while processing data (ever had a page just freeze on you?). I’ve watched this talk multiple times and I recommend doing so until the concepts really click. When you understand the Event Loop you can easily reason about the below code logging out `a, c, b` rather than `b, c, a`.
 
 ```js
 function a() {
@@ -105,9 +105,9 @@ We now know that `userIsAdmin` is being called from `src/index.js`, and `src/adm
 Additional resources:
 - [jlevy/the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
 
-### [Testing Javascript](https://testingjavascript.com/)
+### [Testing JavaScript](https://testingjavascript.com/)
 
-This is _the_ resource for learning to test Javascript applications. Kent explains how to avoid testing implementation details, and advocates for testing best practices. This is the only paid resource in this list and I wouldn’t advocate for it unless I truly believed that it’s worth every penny.
+This is _the_ resource for learning to test JavaScript applications. Kent explains how to avoid testing implementation details, and advocates for testing best practices. This is the only paid resource in this list and I wouldn’t advocate for it unless I truly believed that it’s worth every penny.
 
 ### [Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 
@@ -151,9 +151,9 @@ This is a great introduction to practical data structures and algorithms as well
 
 ### [Reginald Braithwaite](http://raganwald.com/)
 
-His book [JavaScript Allongé](https://leanpub.com/javascriptallongesix) is free to read online and is probably the most digestible and informative text on functions and composition in Javascript. I can not recommend this book enough.
+His book [JavaScript Allongé](https://leanpub.com/javascriptallongesix) is free to read online and is probably the most digestible and informative text on functions and composition in JavaScript. I can not recommend this book enough.
 
-This is more of a bonus than anything. Reginald Braithwaite’s articles have incredible insight into functional programming with Javascript. As a beginner these will most likely be challenging to follow. However, they are packed with useful information and techniques. Here’s a few to get started:
+This is more of a bonus than anything. Reginald Braithwaite’s articles have incredible insight into functional programming with JavaScript. As a beginner these will most likely be challenging to follow. However, they are packed with useful information and techniques. Here’s a few to get started:
 
 * [What’s a Transducer?](http://raganwald.com/2017/04/30/transducers.html)
 * [Recursion? We don’t need no stinking recursion!](http://raganwald.com/2018/05/20/we-dont-need-no-stinking-recursion.html)
@@ -161,7 +161,7 @@ This is more of a bonus than anything. Reginald Braithwaite’s articles have in
 
 ### [Pony Foo Weekly](https://ponyfoo.com/weekly)
 
-And finally, this is one of the best weekly newsletters on Javascript/the Web in general. Packed with tons of great articles on a wide range of topics.
+And finally, this is one of the best weekly newsletters on JavaScript/the Web in general. Packed with tons of great articles on a wide range of topics.
 
 ## Keep Learning!
 Lists like these are a bit overwhelming. I don’t suggestion tackling everything at once. But, I do want to encourage you to contribute to the culture of sharing knowledge that is so prevalent in the Web world. Share whatever you find interesting with your peers. Don’t be afraid to ask for help when you don’t understand something. And most importantly, keep learning! 
