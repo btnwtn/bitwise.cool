@@ -149,6 +149,11 @@ console.log(about.innerHTML)
 
 This is a great introduction to practical data structures and algorithms as well.
 
+### [Wizard Zines](https://wizardzines.com/)
+
+[Wizard Zines](https://wizardzines.com/) by [Julia Evans](https://jvns.ca/) is a fun collection of programming zines. While not Frontend specific, they cover a wide range of skills that are applicaple to most engineers. My personal favorite is [Help! I have a manager!
+](https://wizardzines.com/zines/manager/), it's something I wish I had when first getting into the industry.
+
 ### [Reginald Braithwaite](http://raganwald.com/)
 
 His book [JavaScript Allongé](https://leanpub.com/javascriptallongesix) is free to read online and is probably the most digestible and informative text on functions and composition in JavaScript. I can not recommend this book enough.
@@ -158,6 +163,10 @@ This is more of a bonus than anything. Reginald Braithwaite’s articles have in
 * [What’s a Transducer?](http://raganwald.com/2017/04/30/transducers.html)
 * [Recursion? We don’t need no stinking recursion!](http://raganwald.com/2018/05/20/we-dont-need-no-stinking-recursion.html)
 * [How I Learned to Stop Worrying and ❤️ the State Machine](http://raganwald.com/2018/02/23/forde.html)
+
+### [Basics of CSS Grid: The Big Picture](https://www.youtube.com/watch?v=FEnRpy9Xfes)
+
+It's super important to understand how to build layouts with CSS effectively. [Layout Land](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag) and all of [Jen Simmons'](http://jensimmons.com/) works are incredible resources for building your skills with CSS Grid. Comfortably working with CSS Grid will be an essential skill for any Frontend Engineer.
 
 ### [Pony Foo Weekly](https://ponyfoo.com/weekly)
 
