@@ -151,11 +151,26 @@ This is a great introduction to practical data structures and algorithms as well
 
 ### [Wizard Zines](https://wizardzines.com/)
 
-[Wizard Zines](https://wizardzines.com/) by [Julia Evans](https://jvns.ca/) is a fun collection of programming zines. While not Frontend specific, they cover a wide range of skills that are applicaple to most engineers. My personal favorite is [Help! I have a manager!](https://wizardzines.com/zines/manager/), it's something I wish I had when first getting into the industry.
+<!--
+<a href="https://wizardzines.com/zines/wizard/">
+<img style="
+display: block;
+max-width: 280px;
+margin: 20px auto;
+border: 5px solid #928ab9;
+box-shadow: 0 0 0px 3px #f1e1ff;
+border-radius: 3px;
+"
+src="/words/static/so_you_want_to_be_a_wizard_poster.png"
+alt=""/>
+</a>
+-->
+
+[Wizard Zines](https://wizardzines.com/) by [Julia Evans](https://jvns.ca/) is a fun collection of programming zines. While not Frontend specific, they cover a wide range of skills that are applicaple to most engineers. My personal favorite is _[Help! I have a manager!](https://wizardzines.com/zines/manager/)_, it's something I wish I had when first getting into the industry.
 
 ### [Reginald Braithwaite](http://raganwald.com/)
 
-His book [JavaScript Allongé](https://leanpub.com/javascriptallongesix) is free to read online and is probably the most digestible and informative text on functions and composition in JavaScript. I can not recommend this book enough.
+_[JavaScript Allongé](https://leanpub.com/javascriptallongesix)_ is free to read online and is probably the most digestible and informative text on functions and composition in JavaScript. I can not recommend this book enough.
 
 This is more of a bonus than anything. Reginald Braithwaite’s articles have incredible insight into functional programming with JavaScript. As a beginner these will most likely be challenging to follow. However, they are packed with useful information and techniques. Here’s a few to get started:
 
@@ -164,6 +179,20 @@ This is more of a bonus than anything. Reginald Braithwaite’s articles have in
 * [How I Learned to Stop Worrying and ❤️ the State Machine](http://raganwald.com/2018/02/23/forde.html)
 
 ### [Basics of CSS Grid: The Big Picture](https://www.youtube.com/watch?v=FEnRpy9Xfes)
+
+<a href="https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag">
+<img style="
+display: block;
+max-width: 280px;
+margin: 20px auto;
+border: 5px solid #928ab9;
+box-shadow: 0 0 0px 3px #f1e1ff;
+border-radius: 3px;
+"
+src="/words/static/layout_land_preview.jpg"
+alt=""/>
+</a>
+
 
 It's super important to understand how to build layouts with CSS effectively. [Layout Land](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag) and all of [Jen Simmons'](http://jensimmons.com/) works are incredible resources for building your skills with CSS Grid. Comfortably working with CSS Grid will be an essential skill for any Frontend Engineer.
 

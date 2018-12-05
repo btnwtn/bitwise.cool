@@ -85,6 +85,14 @@ code {
   font-family: 'IBM Plex Mono', monospace;
 }
 
+h2 + h3 {
+    margin-top: 0;
+}
+
+h3 {
+    margin-top: 2em;
+}
+
 pre[class*='language-'] {
   border-radius: 8px;
   border: 6px solid hsl(233, 100%, 85%);
