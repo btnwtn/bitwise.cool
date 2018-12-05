@@ -151,8 +151,7 @@ This is a great introduction to practical data structures and algorithms as well
 
 ### [Wizard Zines](https://wizardzines.com/)
 
-[Wizard Zines](https://wizardzines.com/) by [Julia Evans](https://jvns.ca/) is a fun collection of programming zines. While not Frontend specific, they cover a wide range of skills that are applicaple to most engineers. My personal favorite is [Help! I have a manager!
-](https://wizardzines.com/zines/manager/), it's something I wish I had when first getting into the industry.
+[Wizard Zines](https://wizardzines.com/) by [Julia Evans](https://jvns.ca/) is a fun collection of programming zines. While not Frontend specific, they cover a wide range of skills that are applicaple to most engineers. My personal favorite is [Help! I have a manager!](https://wizardzines.com/zines/manager/), it's something I wish I had when first getting into the industry.
 
 ### [Reginald Braithwaite](http://raganwald.com/)
 
