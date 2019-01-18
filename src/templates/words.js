@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import styled from 'react-emotion'
 import logo from '../images/logo.svg'
+import { PostDate } from '../components/PostDate'
 
 let Container = styled.div`
   max-width: 45em;
@@ -15,13 +16,6 @@ let Container = styled.div`
 
 let Content = styled.div`
   margin-bottom: 4em;
-`
-
-let Date = styled.p`
-  color: #483e3e;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.9em;
-  margin-bottom: 2rem;
 `
 
 let Logo = styled.img`
@@ -46,7 +40,7 @@ export default ({ data, location }) => {
           <Logo src={logo} alt="bitwise" />
         </a>
         <h1>{post.frontmatter.title}</h1>
-        <Date>Published: {post.frontmatter.date}</Date>
+        <PostDate>Published: {post.frontmatter.date}</PostDate>
         <Content dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
     </Layout>
