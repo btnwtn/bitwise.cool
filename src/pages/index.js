@@ -7,7 +7,6 @@ import { PostDate } from '../components/PostDate'
 import logo from '../images/logo.svg'
 
 const Center = styled.div`
-  position: absolute;
   height: 100%;
   width: 100%;
   padding: 5px;
