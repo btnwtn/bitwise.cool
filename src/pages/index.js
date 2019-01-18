@@ -4,6 +4,7 @@ import styled from 'react-emotion'
 import Layout from '../components/layout'
 import Collage from '../components/Collage'
 import { PostDate } from '../components/PostDate'
+import logo from '../images/logo.svg'
 
 const Center = styled.div`
   position: absolute;
@@ -16,8 +17,14 @@ const Center = styled.div`
   flex-direction: column;
 `
 
+let Logo = styled.img`
+  display: block;
+  max-width: 200px;
+  margin: 5rem auto;
+`
+
 let WordsContainer = styled.div`
-  margin: 1rem 0;
+  margin: 5rem 0;
 `
 
 let LatestWords = ({ posts }) => (
@@ -47,6 +54,9 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Center>
+        <a href="/">
+          <Logo src={logo} alt="bitwise" />
+        </a>
         <Collage />
         <LatestWords posts={bloggyBois} />
       </Center>
